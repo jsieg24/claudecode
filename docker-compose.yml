@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: subscription-analytics-db
+    environment:
+      POSTGRES_DB: subscription_analytics
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: subscription-analytics-backend
+    environment:
+      PORT: 3001
+      NODE_ENV: production
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: subscription_analytics
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      JWT_SECRET: ${JWT_SECRET:-your-secret-key-change-in-production}
+      SHOPIFY_SHOP_URL: ${SHOPIFY_SHOP_URL}
+      SHOPIFY_ACCESS_TOKEN: ${SHOPIFY_ACCESS_TOKEN}
+      SKIO_API_URL: ${SKIO_API_URL:-https://api.skio.com/graphql}
+      SKIO_ACCESS_TOKEN: ${SKIO_ACCESS_TOKEN}
+      RECHARGE_API_URL: ${RECHARGE_API_URL:-https://api.rechargeapps.com}
+      RECHARGE_ACCESS_TOKEN: ${RECHARGE_ACCESS_TOKEN}
+      STAY_AI_API_URL: ${STAY_AI_API_URL:-https://api.stay.ai}
+      STAY_AI_ACCESS_TOKEN: ${STAY_AI_ACCESS_TOKEN}
+      KLAVIYO_API_URL: ${KLAVIYO_API_URL:-https://a.klaviyo.com/api}
+      KLAVIYO_API_KEY: ${KLAVIYO_API_KEY}
+    ports:
+      - "3001:3001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: subscription-analytics-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
