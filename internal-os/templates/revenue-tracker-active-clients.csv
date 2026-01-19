@@ -1,0 +1,16 @@
+Client Name,Status,Primary Owner,Start Date,Contract Length (Months),Renewal Date,Monthly Retainer (MRR),Annual Value (ARR),Months Active,LTV to Date,Contract Type,Payment Terms,Last Invoice,Invoice Status,Notes
+Client 1,Active,Emma,2024-03-01,12,,2500,,,,,Net 30,2025-01-01,Paid,
+Client 2,Active,Emma,2024-06-15,6,,3000,,,,,Net 15,2025-01-01,Paid,
+Client 3,Active,Cathy,2024-09-01,12,,2000,,,,,Prepaid,2025-01-01,Paid,
+Client 4,Active,Emma,2024-01-01,12,,1500,,,,,Net 30,2025-01-01,Pending,
+Client 5,Active,Cathy,2024-04-01,12,,2500,,,,,Net 30,2025-01-01,Paid,
+Client 6,Active,Emma,2024-07-01,6,,3500,,,,,Net 15,2025-01-01,Paid,
+Client 7,Active,Cathy,2024-02-01,12,,2000,,,,,Prepaid,2025-01-01,Paid,
+Client 8,Active,Emma,2024-05-01,12,,2500,,,,,Net 30,2025-01-01,Paid,
+Client 9,At Risk,Emma,2024-08-01,6,,1800,,,,,Net 30,2025-01-01,Overdue,Behind on payments
+Client 10,Active,Cathy,2024-10-01,12,,2200,,,,,Prepaid,2025-01-01,Paid,
+Client 11,Active,Emma,2024-03-15,12,,3000,,,,,Net 30,2025-01-01,Paid,
+Client 12,Active,Cathy,2024-06-01,6,,1500,,,,,Net 15,2025-01-01,Paid,
+Client 13,Active,Emma,2024-09-15,12,,2800,,,,,Net 30,2025-01-01,Paid,
+Client 14,Active,Cathy,2024-11-01,12,,2000,,,,,Prepaid,2025-01-01,Paid,
+Client 15,Churning,Emma,2024-04-15,12,,2500,,,,,Net 30,2025-01-01,Paid,Gave notice - last month is Feb

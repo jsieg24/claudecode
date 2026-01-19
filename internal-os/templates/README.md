@@ -7,9 +7,16 @@
 | Template | Description | Format |
 |----------|-------------|--------|
 | [Client Tracker](./client-tracker.md) | Master spreadsheet for all client visibility | Google Sheets |
+| [Revenue Tracker](./revenue-tracker.md) | MRR, ARR, pipeline, and financial tracking | Google Sheets |
 | [Monthly Report](./monthly-report.md) | Client performance report template | Google Slides |
 | [Client Onboarding Checklist](./onboarding-checklist.md) | Checklist for new client setup | Google Sheets / ClickUp |
 | [Campaign Brief](./campaign-brief.md) | Template for planning campaigns | Google Docs |
+
+## Quick-Start CSVs
+
+Import these directly into Google Sheets:
+- [revenue-tracker-active-clients.csv](./revenue-tracker-active-clients.csv) - Active client MRR template
+- [revenue-tracker-pipeline.csv](./revenue-tracker-pipeline.csv) - Sales pipeline template
 
 ---
 
